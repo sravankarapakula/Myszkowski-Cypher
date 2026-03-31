@@ -1,30 +1,69 @@
-# Myszkowski-Cypher
-Myszkowski cipher implementation in cpp
+# Myszkowski Cipher (C++ Implementation)
 
-# Algorithm:
-Encryption Flow:
-Input plaintext P and key K
-Compute DJB2 hash:
-  H ← 5381
-  For each character c in P:
-    H ← H * 33 + ASCII(c)
-Convert H to string
-Let m ← length(K)
-Compute rows r ← ceil(length(H)/m)
-Pad H with 'X' to fill grid
-Generate Myszkowski order O
-Fill grid row-wise
-For each rank in ascending order:
-  Read columns top → bottom
-Output ciphertext C
+Implementation of the **Myszkowski Transposition Cipher** with a preprocessing step using **DJB2 hashing**.
 
-Decryption Flow:
-Input ciphertext C and key K
-Compute m ← length(K)
-Compute rows r ← length(C)/m
-Generate Myszkowski order O
-Fill grid column-wise based on rank order
-Read grid row-wise
-Output recovered hash H
+---
 
-style the data to present it in readme file in hte git repo
+## Algorithm
+
+### Encryption Flow
+
+1. Input plaintext `P` and key `K`  
+
+2. Compute DJB2 hash:
+   
+3. Convert `H` to string  
+
+4. Let:
+   
+5. Pad `H` with `'X'` until size = `r × m`  
+
+6. Generate Myszkowski order `O`:
+- Extract unique characters from `K`
+- Sort them
+- Assign ranks starting from `0`
+- Map each character in `K` → rank  
+
+7. Fill grid row-wise  
+
+8. For each rank in ascending order:
+- Traverse columns left → right  
+- If column matches rank:
+  - Read top → bottom  
+  - Append to ciphertext  
+
+9. Output ciphertext `C`  
+
+---
+
+### Decryption Flow
+
+1. Input ciphertext `C` and key `K`  
+
+2. Compute:
+   
+3. Generate Myszkowski order `O`  
+
+4. Create empty grid `r × m`  
+
+5. Fill grid column-wise:
+- For each rank in ascending order:
+  - Traverse columns
+  - Fill top → bottom using ciphertext  
+
+6. Read grid row-wise:
+- Recover hashed text `H`  
+
+7. Output recovered hash `H`  
+
+---
+
+## Flow Summary
+
+---
+
+## Notes
+
+- Duplicate key characters share the same rank  
+- Padding ensures full grid formation  
+- Decryption restores only the hash, not the original plaintext  
