@@ -60,6 +60,12 @@ Implementation of the **Myszkowski Transposition Cipher** with a preprocessing s
 
 ## Flow Summary
 
+1. Encryption:
+   P → DJB2 → H → Myszkowski → C
+
+2. Decryption:
+   C → Reverse Myszkowski → H
+
 ---
 
 ## Notes
