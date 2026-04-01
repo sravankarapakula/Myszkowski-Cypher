@@ -17,7 +17,6 @@ Implementation of the **Myszkowski Transposition Cipher** with a preprocessing s
   - Simple and efficient (O(n))
   - Deterministic output for consistent encryption input
   - Widely used for string hashing
-  - Suitable for educational cryptographic preprocessing
 
 ---
 
@@ -33,7 +32,7 @@ A classical transposition cipher where:
 ### DJB2 Hash Function
 -H = 5381
 -For each character c:
-   -H = (H * 33) + ASCII(c)
+-H = (H * 33) + ASCII(c)
 
 - Converts plaintext into a numeric hash before encryption
 
@@ -127,8 +126,8 @@ Decryption Output:
 ---
 ## Test Script (Round Trip)
 
--Plaintext → Hash → Encrypt → Ciphertext
--Ciphertext → Decrypt → Hash
+Plaintext → Hash → Encrypt → Ciphertext
+Ciphertext → Decrypt → Hash
 
 ---
 
