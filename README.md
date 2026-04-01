@@ -126,8 +126,8 @@ Decryption Output:
 ---
 ## Flow:
 
-Plaintext → Hash → Encrypt → Ciphertext  
-Ciphertext → Decrypt → Hash
+**Encryption** : Plaintext → Hash → Encrypt → Ciphertext  
+**Decryption** : Ciphertext → Decrypt → Hash
 
 ---
 
