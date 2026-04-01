@@ -30,9 +30,9 @@ A classical transposition cipher where:
 - Provides better diffusion than simple columnar transposition
 
 ### DJB2 Hash Function
---H = 5381
---For each character c:
-    --H = (H * 33) + ASCII(c)
+- H = 5381
+- For each character c:
+    - H = (H * 33) + ASCII(c)
 
 - Converts plaintext into a numeric hash before encryption
 
