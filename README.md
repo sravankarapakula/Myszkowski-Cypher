@@ -126,12 +126,12 @@ Decryption Output:
 ---
 ## Flow:
 
-Plaintext → Hash → Encrypt → Ciphertext
+Plaintext → Hash → Encrypt → Ciphertext  
 Ciphertext → Decrypt → Hash
 
 ---
 
-Validation:
+## Validation:
 - Original hash == Decrypted hash
 
 ---
